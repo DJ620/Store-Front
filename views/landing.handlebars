@@ -5,61 +5,64 @@ img {
 }
 </style>
 
-<a name="#"></a>
+    <div class="content">
 
-    <header class="p-5 header">
-        <nav class="row">
-            <div class="col-4">
-                <ul class="nav">
-                    <li class="nav-item">
-                    <a class="nav-link a-customizations a-hover-customizations" href="/landing/{{ userid }}">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link a-customizations a-hover-customizations" href="">About</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link a-customizations a-hover-customizations" href="">Contact</a>
-                    </li>
-                </ul>
+    <a name="#"></a>
+
+        <header class="p-5 header">
+            <nav class="row">
+                <div class="col-4">
+                    <ul class="nav">
+                        <li class="nav-item">
+                        <a class="nav-link a-customizations a-hover-customizations" href="/landing/{{ userid }}">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link a-customizations a-hover-customizations" href="">About</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link a-customizations a-hover-customizations" href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-4">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link pt-0 pb-0 storeFront a-customizations a-hover-customizations" href="/landing/{{ userid }}">Store Front</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-4">
+                    <ul class="nav justify-content-end">
+                        {{#if isSeller}}
+                        <li class="nav-item">
+                            <a class="nav-link active a-customizations a-hover-customizations" href="/storeEditor/{{ userid }}">Settings</a>
+                        </li>
+                        {{/if}}
+                        {{#unless isSeller}}
+                        <li class="nav-item"></li>
+                            <a class="nav-link active a-customizations a-hover-customizations" href="">Account</a>
+                        </li>
+                        {{/unless}}
+                        <li class="nav-item">
+                        <a class="nav-link a-customizations a-hover-customizations" href="/cart/{{ userid }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z"/>
+                            </svg>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>       
+        </header>
+
+        <div class="p-5 text-center align-items-center">
+            <div class="row justify-content-center p-5">
+                {{#each data}}
+                    {{>product/store-block}}
+                {{/each}}
             </div>
-
-            <div class="col-4">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link pt-0 pb-0 storeFront a-customizations a-hover-customizations" href="/landing/{{ userid }}">Store Front</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-4">
-                <ul class="nav justify-content-end">
-                    {{#if isSeller}}
-                    <li class="nav-item">
-                        <a class="nav-link active a-customizations a-hover-customizations" href="/storeEditor/{{ userid }}">Settings</a>
-                    </li>
-                    {{/if}}
-                    {{#unless isSeller}}
-                    <li class="nav-item"></li>
-                        <a class="nav-link active a-customizations a-hover-customizations" href="">Account</a>
-                    </li>
-                    {{/unless}}
-                    <li class="nav-item">
-                    <a class="nav-link a-customizations a-hover-customizations" href="/cart/{{ userid }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z"/>
-                        </svg>
-                    </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>       
-    </header>
-
-    <div class="p-5 text-center align-items-center">
-        <div class="row justify-content-center p-5">
-            {{#each data}}
-                {{>product/store-block}}
-            {{/each}}
         </div>
     </div>
 
@@ -69,7 +72,7 @@ img {
     {{#unless isFixed}}
     <footer class="page-footer footer-color footer-static font-small p-5">
     {{/unless}} --}}
-    <footer class="page-footer footer-color footer-static font-small p-5">
+    <footer class="page-footer footer-color font-small p-5">
         <div class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-3"></div>

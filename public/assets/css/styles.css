@@ -7,6 +7,12 @@ html, body {
 
 body {
 	color: black;
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 0 auto;
 }
 
 .nav, .nav-item, .nav-link {
@@ -75,6 +81,7 @@ footer {
 	width:100%; 
 	background: black;
 	color: white;
+	flex-shrink: 0;
 }
 
 .footer-absolute {
