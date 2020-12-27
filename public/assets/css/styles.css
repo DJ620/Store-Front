@@ -77,9 +77,13 @@ footer {
 	color: white;
 }
 
+.footer-absolute {
+	position: absolute;
+	bottom: 0;
+}
+
 .footer-fixed {
 	position: fixed;
-
 }
 
 .footer-static {
